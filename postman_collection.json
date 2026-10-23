@@ -1,0 +1,151 @@
+{
+  "info": {
+    "_postman_id": "a9b1c2d3-e4f5-6789-0123-abcdef456789",
+    "name": "API Projeto Notas - CRUD",
+    "description": "Coleção de testes e documentação dos endpoints da API RESTful de Notas desenvolvida com Express.js e Node.js para a disciplina de Frameworks Front-end.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Status / Raiz da API",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            ""
+          ]
+        },
+        "description": "Verifica se a API está online e retorna as rotas disponíveis."
+      },
+      "response": []
+    },
+    {
+      "name": "1. Listar Todas as Notas (GET)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/notes",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "notes"
+          ]
+        },
+        "description": "Retorna uma lista em JSON com todas as notas salvas no arquivo data.json."
+      },
+      "response": []
+    },
+    {
+      "name": "2. Obter Nota por ID (GET)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/notes/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "notes",
+            "1"
+          ]
+        },
+        "description": "Busca e retorna uma única nota a partir do seu ID."
+      },
+      "response": []
+    },
+    {
+      "name": "3. Criar Nova Nota (POST)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Nova Nota Postman\",\n  \"texto\": \"Exemplo de nota cadastrada através da coleção do Postman.\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/notes",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "notes"
+          ]
+        },
+        "description": "Adiciona uma nova nota com titulo, texto, id gerado automaticamente e criadoEm."
+      },
+      "response": []
+    },
+    {
+      "name": "4. Atualizar Nota Existente (PUT)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Nota Atualizada via Postman\",\n  \"texto\": \"Conteúdo modificado com sucesso pelo método PUT.\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/notes/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "notes",
+            "1"
+          ]
+        },
+        "description": "Atualiza o título e texto de uma nota existente pelo ID."
+      },
+      "response": []
+    },
+    {
+      "name": "5. Excluir Nota (DELETE)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/notes/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "notes",
+            "1"
+          ]
+        },
+        "description": "Exclui a nota correspondente ao ID informado."
+      },
+      "response": []
+    }
+  ]
+}
